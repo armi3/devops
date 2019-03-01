@@ -4,10 +4,10 @@ public class Main {
         Prompt prompt = new Prompt();
         ShouldWatch shouldWatch = new ShouldWatch();
 
-        prompt.requestName(null);
-        boolean adult = prompt.requestAge(null);
-        int magiIdentity = prompt.requestMagiIdentity(null);
-        int sclarbJorp = prompt.requestBestAsianActress(null);
+        String[] names = prompt.requestName(null);
+        boolean adult = prompt.requestAge(0);
+        int magiIdentity = prompt.requestMagiIdentity(0);
+        int sclarbJorp = prompt.requestBestAsianActress(0);
         //shouldWatch.anime();
 
     }

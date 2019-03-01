@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Prompt {
-    public static void requestName(String[] params){
+    public static String[] requestName(String[] params){
         Scanner sc = new Scanner(System.in);
         String firstName ="";
         String lastName ="";
@@ -24,19 +24,22 @@ public class Prompt {
                 + firstName + " " + "(" + firstName.length() + ")" + " "
                 + lastName + " " + "(" + lastName.length() + ").");
 
+        String[] arr = {firstName, lastName};
+        return arr;
+
     }
 
-    public static boolean requestAge(String[] params){
+    public static boolean requestAge(int param){
         Scanner sc = new Scanner(System.in);
         int age = 0;
 
-        if (params==null){
+        if (param==0){
             while(age<=0){
                 System.out.print("\nYour age: ");
                 age = sc.nextInt();
             }
         } else {
-            age = Integer.parseInt(params[0]);
+            age = param;
         }
 
         if (age>=18){
@@ -49,11 +52,11 @@ public class Prompt {
 
     }
 
-    public static int requestMagiIdentity(String[] params){
+    public static int requestMagiIdentity(int param){
         Scanner sc = new Scanner(System.in);
         int magiIdentity = 0;
 
-        if (params==null){
+        if (param==0){
             while(magiIdentity!=1 || magiIdentity!=2 || magiIdentity!=3){
                 System.out.print("\nWhich 7th gen organic supercomputer implanted personality role are you? Enter 1-3.");
                 System.out.print("\n(1) Scientist --> Melchior-Magi");
@@ -62,29 +65,20 @@ public class Prompt {
                 magiIdentity = sc.nextInt();
             }
         } else {
-            magiIdentity = Integer.parseInt(params[0]);
+            magiIdentity = 1;
         }
 
         System.out.print("\nSuperb, Dr. Naoko Akagi...");
-        if (magiIdentity==1){
-            //System.out.print("\nSup Dr. Naoko Akagi...");
-            return 1;
-        } else if (magiIdentity==2){
-            //System.out.print("\nSup Dr. Naoko Akagi...");
-            return 2;
-        } else {
-            //System.out.print("\nSup, Dr. Naoko Akagi...");
-            return 3;
-        }
+        return magiIdentity;
 
 
     }
 
-    public static int requestBestAsianActress(String[] params){
+    public static int requestBestAsianActress(int param){
         Scanner sc = new Scanner(System.in);
         int bestScarlett = 0;
 
-        if (params==null){
+        if (param==0){
             while(bestScarlett!=1 || bestScarlett!=2 || bestScarlett!=3 || bestScarlett!=4){
                 System.out.print("\nWhich Sclarb Jorb do you prefer? Enter 1-4.");
                 System.out.print("\n(1) Her");
@@ -94,19 +88,11 @@ public class Prompt {
                 bestScarlett = sc.nextInt();
             }
         } else {
-            bestScarlett = Integer.parseInt(params[0]);
+            bestScarlett = 2;
         }
 
         System.out.print("\nBest asian actress nomination.");
-        if (bestScarlett==1){
-            return 1;
-        } else if (bestScarlett==2){
-            return 2;
-        } else if (bestScarlett==3){
-            return 3;
-        } else {
-            return 4;
-        }
+        return bestScarlett;
 
     }
 }
