@@ -5,7 +5,7 @@ public class Main {
         ShouldWatch shouldWatch = new ShouldWatch();
 
         prompt.requestName(null);
-        prompt.requestAge(null);
+        boolean adult = prompt.requestAge(null);
         int magiIdentity = prompt.requestMagiIdentity(null);
         int sclarbJorp = prompt.requestBestAsianActress(null);
         //shouldWatch.anime();
